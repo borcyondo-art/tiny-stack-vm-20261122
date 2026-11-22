@@ -153,8 +153,8 @@ function run(prog: Uint8Array, inp: Uint8Array): [Uint8Array, number] {
   }
 }
 
-const inRoot = process.argv[2] ?? "/input";
-const outRoot = process.argv[3] ?? "/output";
+const inRoot = process.argv[2] ?? process.env.MAKEFUN_INPUT_DIR ?? "/input";
+const outRoot = process.argv[3] ?? process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 
 for (let k = 1; k <= 40; k++) {
   const id = "i" + String(k).padStart(3, "0");
